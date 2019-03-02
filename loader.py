@@ -9,7 +9,6 @@ class DataLoader:
         self.images = {}
         self.labels = {}
         self.read_data()
-        print(self.images, self.labels)
 
     def read_data(self):
         self.images = du.read_images(self.images_dir)
@@ -20,9 +19,9 @@ class DataLoader:
 
 
 # a = DataLoader(
-# #     r"X:\DataScience\human-protein-atlas-image-classification\train",
-# #     r"X:\DataScience\human-protein-atlas-image-classification\train.csv"
-# # )
+#     r"X:\DataScience\human-protein-atlas-image-classification\train",
+#     r"X:\DataScience\human-protein-atlas-image-classification\train.csv"
+# )
 
 
 
