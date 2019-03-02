@@ -55,6 +55,6 @@ def read_images(directory=dir_path):
     return images
 
 
-# read_images()
+# print(read_images())
 
 # print(read_labels())

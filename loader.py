@@ -18,10 +18,10 @@ class DataLoader:
         return self.images, self.labels
 
 
-# a = DataLoader(
-#     r"X:\DataScience\human-protein-atlas-image-classification\train",
-#     r"X:\DataScience\human-protein-atlas-image-classification\train.csv"
-# )
-
-
-
+# if __name__ == "__main__":
+#     print('start')
+#     a = DataLoader(
+#         "X:\\DataScience\\human-protein-atlas-image-classification\\train",
+#         "X:\\DataScience\\human-protein-atlas-image-classification\\train.csv"
+#     )
+#     print('finish')
