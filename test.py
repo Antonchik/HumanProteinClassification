@@ -13,9 +13,9 @@ if __name__ == "__main__":
     loader = DataLoader(train_images_dir, train_labels_file)
     files = loader.labels.keys()
     for file in files:
-        colors = ['red', 'green', 'blue', 'yellow']
+        colors = loader.images[file].keys()
         print(loader.labels[file])
         for color in colors:
             _image = loader.images[file][color]
-            show_image(open_image(_image))
+            show_image(open_image(_image, opencv=False), opencv=False)
     print('finish')

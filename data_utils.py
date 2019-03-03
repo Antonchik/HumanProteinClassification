@@ -8,12 +8,12 @@ dir_path = r"X:\DataScience\human-protein-atlas-image-classification\train"
 
 
 def open_image(image_file: str, opencv=False):
-    img = Image.open(image_file) if not opencv else _open_image_cv(image_file)
+    img = _open_image_cv(image_file) if opencv else Image.open(image_file)
     return img
 
 
-def show_image(image: Image, opencv=False):
-    image.show() if not opencv else _show_image_cv('image', image)
+def show_image(image, opencv=False, window_name='image'):
+    _show_image_cv(window_name, image) if opencv else image.show()
 
 
 def _open_image_cv(image_file: str):
