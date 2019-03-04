@@ -17,5 +17,6 @@ if __name__ == "__main__":
         print(loader.labels[file])
         for color in colors:
             _image = loader.images[file][color]
-            show_image(open_image(_image, opencv=False), opencv=False)
+            show_image(_image)                          # show opened image
+            # show_image(open_image(_image))            # open and show image
     print('finish')

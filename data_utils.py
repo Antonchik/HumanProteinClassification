@@ -46,8 +46,8 @@ def read_images(directory=dir_path):
     for file in files:
         splited = file.split('_')
         image, color = splited[0], splited[1][:-4]
-        # pic = open_image('\\'.join([directory, file]))
-        pic = '\\'.join([directory, file])
+        pic = open_image('\\'.join([directory, file]))      # open image
+        # pic = '\\'.join([directory, file])                # save link to image
         if image not in images:
             images.update({image: {color: pic}})
         else:
