@@ -3,17 +3,25 @@ from PIL import Image
 import cv2 as cv
 import csv
 
+
+cv.setNumThreads(0)
 file_path = r"X:\DataScience\human-protein-atlas-image-classification\train.csv"
 dir_path = r"X:\DataScience\human-protein-atlas-image-classification\train"
 
 
-def open_image(image_file: str, opencv=False):
-    img = _open_image_cv(image_file) if opencv else Image.open(image_file)
+def open_image(image_file: str, opencv=True):
+    if opencv:
+        img = _open_image_cv(image_file)
+    else:
+        img = Image.open(image_file)
     return img
 
 
-def show_image(image, opencv=False, window_name='image'):
-    _show_image_cv(window_name, image) if opencv else image.show()
+def show_image(image, opencv=True, window_name='image'):
+    if opencv:
+        _show_image_cv(window_name, image)
+    else:
+        image.show()
 
 
 def _open_image_cv(image_file: str):
@@ -46,8 +54,8 @@ def read_images(directory=dir_path):
     for file in files:
         splited = file.split('_')
         image, color = splited[0], splited[1][:-4]
-        pic = open_image('\\'.join([directory, file]))      # open image
-        # pic = '\\'.join([directory, file])                # save link to image
+        pic = open_image(os.path.join(directory, file))      # open image
+        # pic = os.path.join(directory, file)                # save link to image
         if image not in images:
             images.update({image: {color: pic}})
         else:
