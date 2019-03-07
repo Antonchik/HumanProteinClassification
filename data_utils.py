@@ -64,8 +64,7 @@ def read_data(file=file_path, dir=dir_path, cat_num=28):
     for image_id in labels['Id']:
         images.append(read_all_image_channels(dir, image_id))
     targets = np.array(targets)
-    # images = np.array(images)
-    print(images)
+    images = np.array(images)
     return targets, images
 
 
