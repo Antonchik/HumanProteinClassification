@@ -59,9 +59,8 @@ def read_data(file=file_path, dir=dir_path, cat_num=28):
     labels = read_csv(file)
     targets = []
     images = []
-    for target in labels['Target']:
+    for image_id, target in zip(labels['Id'], labels['Target']):
         targets.append(one_hot_encoder(target, cat_num))
-    for image_id in labels['Id']:
         images.append(read_all_image_channels(dir, image_id))
     targets = np.array(targets)
     images = np.array(images)
